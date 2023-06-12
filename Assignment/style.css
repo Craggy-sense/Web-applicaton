@@ -1,0 +1,41 @@
+h1{
+    text-align: center;
+}
+body {
+    background-color: #282c34;
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+  
+* {
+    /*opacity: 0.5;*/
+    /*background: url('demonSlayerBackground.webp') no-repeat center center fixed;*/
+    background-size: cover;
+
+ .background {
+    opacity: 0.3;
+}
+.bold-text {
+    font-weight: bold;
+  }
+
+
+  
+      
+
+    /*color: hsl(0,100%, 50%)*/
+}
+.topLinks:hover{
+    color: black;
+    font-size: 15px;
+}
+.topLinks:visited{
+    color: red;
+    font-size: 15px;
+}
+.topLinks:active{
+    color: green;
+    font-size: 15px;
+}
+

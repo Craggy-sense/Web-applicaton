@@ -1,0 +1,43 @@
+.image-container {
+    display: flex;
+  }
+  
+  .image-container img {
+    width: 200px;
+    border: 2px solid black;
+    transition: box-shadow 0.3s;
+  }
+  
+  .image-container img:hover {
+    box-shadow: 0 0 8px 2px rgba(138, 9, 9, 0.3);
+  }
+
+  .image2-container {
+    display: flex;
+  }
+  
+  .image2-container img {
+    width: 200px;
+    border: 2px solid rgb(185, 47, 47);
+    transition: box-shadow 0.3s;
+  }
+  
+  .image2-container img:hover {
+    box-shadow: 0 0 8px 2px rgba(253, 7, 7, 0.3);
+  }
+  .image-container figcaption {
+    margin-bottom: auto; /* Push the caption to the top */
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  .image2-container figcaption {
+    margin-bottom: auto; /* Push the caption to the top */
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    top:0%
+    
+
+  }
+  *{
+    background-color: blanchedalmond;
+  }

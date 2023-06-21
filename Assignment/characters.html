@@ -3,9 +3,12 @@
 <head>
   <title>Demon Slayer - Characters</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
   <style>
     h1 {
       text-align: center;
+      font-family: "Sofia", sans-serif;
     }
     img {
       display: block;
@@ -30,6 +33,35 @@
       text-decoration: none;
     }
   </style>
+   <script>
+    function isElementInViewport(el) {
+      var rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
+    function lazyLoadImages() {
+      var imageContainers = document.querySelectorAll('.image-container');
+      imageContainers.forEach(function(container, index) {
+        var isInView = isElementInViewport(container);
+        if (isInView) {
+          setTimeout(function() {
+            container.classList.add('in-view');
+          }, index * 200); // Adjust the delay time as desired
+        } else {
+          container.classList.remove('in-view');
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', lazyLoadImages);
+    window.addEventListener('scroll', lazyLoadImages);
+    window.addEventListener('resize', lazyLoadImages);
+  </script>
 </head>
 <body>
   <div class="topBar">
@@ -39,6 +71,27 @@
     </div>
   <h1>Demon Slayer - Characters</h1>
   <img src="demonSlayer.jpg" alt="Nezuko Kamado" width="300">
+
+  <div class="image-container">
+    <figure>
+      <a href="Inosuke.jpg">
+        <img src="Inosuke.jpg" alt="Inosuke">
+      </a>
+      <figcaption>Inosuke</figcaption>
+    </figure>
+    <figure>
+      <a href="nezuko.jpg">
+        <img src="nezuko.jpg" alt="nezuko">
+      </a>
+      <figcaption>Nezuko Kamado</figcaption>
+    </figure>
+    <figure>
+      <a href="Tanjiro.jpg">
+        <img src="Tanjiro.jpg" alt="Tanjiro">
+      </a>
+      <figcaption>Tanjiro Kamado</figcaption>
+    </figure>
+  </div>
   <!----<nav>
     <ul>
       <li><a href="about.html">About</a></li>
@@ -46,7 +99,7 @@
     </ul>
   </nav>-->
   <h2>Main Characters</h2>
-  <ul>
+  <ul style="font-family: 'Sofia', sans-serif; font-weight: bold;">
     <li>Tanjiro Kamado</li>
     <li>Nezuko Kamado</li>
     <li>Zenitsu Agatsuma</li>
@@ -54,17 +107,17 @@
   </ul>
   <hr>
   <form>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name"><br><br>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email"><br><br>
-    <label for="message">Message:</label><br>
-    <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
-    <label for="subscribe">Subscribe:</label>
-    <input type="checkbox" id="subscribe" name="subscribe" value="true"><br><br>
-    <label for="color">Favorite Color:</label>
-    <input type="color" id="color" name="color"><br><br>
-    <input type="submit" value="Submit">
+    <div class="formz">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+      <label for="subscribe">Subscribe:</label>
+      <input type="checkbox" id="subscribe" name="subscribe" value="true">
+      <label for="color">Favorite Color:</label>
+      <input type="color" id="color" name="color"><br><br>
+     <input type="submit " class="form-submit-button" value="Submit"><br><br>
+    </div>
   </form>
 </body>
 </html>
